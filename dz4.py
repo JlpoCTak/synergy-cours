@@ -6,15 +6,15 @@ def zadacha2():
     text = input('Введите текст ')
     for i in range(len(text)):
         if i % 2 == 0:
-            print(f'{text[i]}',end='')
+            print(f'{text[i]}', end='')
+    print()
 
 
 def zadacha3():
-    n = int(input('введите n\n'))
-    nums = input('введите числа ').split()
+    nums = input('ввод ').split()
     nums2 = []
-    for i in range(len(nums)):
-        nums2.append(int(nums[i]) ** n)
+    for i in range(len(nums)-1):
+        nums2.append(int(nums[i]) ** int(nums[-1]))
     print(nums2)
 
 
@@ -27,15 +27,17 @@ def zadacha4():
 
 def zadacha5():
     text = input('Введите строку ')
-    print('x: ', text.count('x'))
-    print('y: ', text.count('y'))
+    print('x: ', text.count('x'), ', y: ', text.count('y'))
 
 
 def zadacha6():
     text = input('Введите строку ')
-    index_start = text.index('(')
-    index_end = text.index(')')
-    print(text[index_start+1:index_end])
+    count_ = text.count('(')
+    for i in range(count_):
+        index_start = text.find('(')
+        index_end = text.find(')')
+        print(text[index_start+1:index_end])
+        text = text.replace(f'{text[0:index_end+1]}', '')
 
 
 def main():
@@ -66,3 +68,4 @@ def main():
 
 
 main()
+
