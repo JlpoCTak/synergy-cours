@@ -19,8 +19,8 @@ def zadacha2():
 
 
 def zadacha3():
-    list1 = input().split()
-    print(reduce(max, list1))
+    list1 = list(map(int, input().split()))
+    print(reduce(lambda x, y: x if x > y else y, list1))
 
 
 def main():

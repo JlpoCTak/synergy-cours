@@ -54,7 +54,7 @@ def zadacha4():
     text3 = input().split()
     c = set(text1) & set(text2) & set(text3)
     if list(c) != []:
-        print(list(c).sort())
+        print(sorted(list(c)))
     else:
         print('Все три задачи никто не решил')
 
