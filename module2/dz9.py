@@ -24,7 +24,10 @@ data1 = [['Alice', 25, 'Moscow'],
          ['Maria', 45, 'Vologda'],
          ['Vlad', 23, 'Omsk']]
 df1 = pd.DataFrame(data1, columns=['Name', "Age", 'City'])
-# print(df1)
-df.to_csv('output.csv', index=False, sep=',', encoding='utf-8')
-# no csv file
+print(df1)
+df.to_csv('dz9_data.csv', index=False, sep=',', encoding='utf-8')
+print()
+print(df1.head(3))
+print()
+print(df1.tail(3))
 
