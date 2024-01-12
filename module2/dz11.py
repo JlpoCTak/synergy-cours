@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-
+import io
 
 def zadacha1():
     data_set = pd.read_csv('Customers.csv', sep=';')
@@ -8,9 +8,19 @@ def zadacha1():
 
 
 def zadacha2():
+    pass_names = []
+    filled_data_set = 0
     data_set = pd.read_csv('Customers.csv', sep=';')
-    clean_data_set = data_set.dropna()
-    print(clean_data_set)
+    # print(data_set.isna().sum())
+    for name, pass_count in zip(data_set.isna(), data_set.isna().sum()):
+        # print(name, pass_count)
+        if pass_count > 0:
+            print(f"В столбце {name} : {pass_count} пропусков")
+            pass_names.append(name)
+    print(pass_names)
+    for pass_name in pass_names:
+        filled_data_set = data_set.fillna(value={pass_name: 'Неизвестно'})
+    print(filled_data_set.isna().sum()) #почистил пропуски
 
 
 def zadacha3():
