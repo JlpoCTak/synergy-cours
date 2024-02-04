@@ -27,6 +27,7 @@ def zadacha2():
     color = np.random.rand(3000)
     sizes = 100 * np.random.rand(x.shape[0])
     plt.scatter(x, y, c=color, s=sizes, alpha=0.5, marker='<')
+    plt.annotate("график", xy=(3, 10), xytext=(2.8, 10),)
     plt.xlabel('x')
     plt.ylabel('y')
     plt.show()
@@ -34,9 +35,11 @@ def zadacha2():
 
 def zadacha3():
     data = np.random.normal(16, 2, 1000)
-    plt.hist(data, bins=20, color='g')
+    plt.hist(data, bins=20, color='r', alpha=0.5)
     plt.show()
-    #вывод: большенство значений стремится к середине
+    #вывод: Большинство результатов стремится к интервалу от 13 до 18 секунд.
+    #Столбики гистограммы снижаются с обеих сторон максимума, что указывает
+    # на уменьшение количества результатов с увеличением времени забега.
 
 
 def main():
