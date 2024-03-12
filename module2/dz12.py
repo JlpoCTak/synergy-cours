@@ -24,6 +24,7 @@ def zadacha1():
 def zadacha2():
     x = np.random.normal(0, 1, 3000)
     y = np.random.normal(3, 4, 3000)
+    print(x)
     color = np.random.rand(3000)
     sizes = 100 * np.random.rand(x.shape[0])
     plt.scatter(x, y, c=color, s=sizes, alpha=0.5, marker='<')
